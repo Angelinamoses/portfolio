@@ -1,175 +1,195 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="main-container">
-         <header>
-            <img src="download.webp" alt="Angelina">
-            <h1>Hey! I'm Angelina!</h1>
-            <p>Healthcare by training. Tech by obsession.</p>
-        </header>
-        </div>
-        <section class="terminal">
-            <div class="terminal-header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-    </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Angelina | Health Informatics & ML</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-    <div class="terminal-body">
-        <p>> booting Angelina.exe...</p>
-        <p>Loading please wait...</p>
-        <p>Loading healthcare obsession... ✓</p>
-        <p>Loading machine learning curiosity... ✓</p>
-        <p>Fixing CSS disasters... in progress...</p>
-        <p>Emotional stability... not found 💀</p>
-    </div>
-</section>
+    <!-- ─── HERO ──────────────────────────────────────────── -->
+    <header class="hero" id="home">
+        <div class="hero__noise"></div>
+        <nav class="nav">
+            <span class="nav__logo">A.</span>
+            <ul class="nav__links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-        </section>
-    <section class="card">
-        </header>
-        <section>
-            <div class="container">
-                <h2>About Me</h2>
+        <div class="hero__content">
+            <div class="hero__img-wrap">
+                <img src="download.webp" alt="Angelina" class="hero__img" />
+                <div class="hero__img-ring"></div>
             </div>
-            <p>I started in healthcare, where real humans panic, alarms beep, and decisions actually matter.
-               Then I somehow fell in love with data, AI, and the beautiful chaos of building things with code.
-               Now I'm a Health Informatics student exploring machine learning, healthcare analytics, and digital systems that can make medicine smarter.
-               Also currently in a toxic relationship with Deep Learning.</p>
-                <h3>Skills</h3>
-                <div class="skills">
-                    <span>Python</span>
-                    <span>Power BI</span>
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>Machine Learning</span>
-                    <span>Data Visualization</span>
-                    <span>Healthcare Analytics</span>
+            <p class="hero__tag">Health Informatics · ML · Data</p>
+            <h1 class="hero__title">Hey, I'm<br /><span class="hero__name">Angelina</span></h1>
+            <p class="hero__sub">Healthcare by training. Tech by obsession.</p>
+            <a href="#projects" class="btn btn--primary">See My Work ↓</a>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal">
+            <div class="terminal__bar">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+                <span class="terminal__title">angelina.sh</span>
+            </div>
+            <div class="terminal__body">
+                <p><span class="prompt">$</span> ./boot angelina.exe</p>
+                <p class="line line--delay-1">› booting Angelina.exe<span class="blink">▋</span></p>
+                <p class="line line--delay-2">› loading healthcare obsession... <span class="ok">✓</span></p>
+                <p class="line line--delay-3">› loading machine learning curiosity... <span class="ok">✓</span></p>
+                <p class="line line--delay-4">› fixing CSS disasters... <span class="warn">in progress</span></p>
+                <p class="line line--delay-5">› emotional stability... <span class="err">not found 💀</span></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ─── ABOUT ─────────────────────────────────────── -->
+        <section class="section about" id="about">
+            <div class="section__inner">
+                <h2 class="section__title">About Me</h2>
+                <div class="about__grid">
+                    <div class="about__text">
+                        <p>I started in healthcare — where real humans panic, alarms beep, and decisions actually matter. Then I fell in love with data, AI, and the beautiful chaos of building things with code.</p>
+                        <p>Now I'm a <strong>Health Informatics student</strong> exploring machine learning, healthcare analytics, and digital systems that can make medicine smarter. Also currently in a toxic relationship with Deep Learning.</p>
+                    </div>
+                    <div class="about__tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Power BI</span>
+                        <span class="tag">HTML / CSS</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Visualization</span>
+                        <span class="tag">Healthcare Analytics</span>
+                        <span class="tag">NLP</span>
+                        <span class="tag">FastAPI</span>
+                    </div>
                 </div>
-            </section>
-               <section class="skills">
-    <h2>WHAT I PLAY WITH</h2>
+            </div>
+        </section>
 
-    <div class="skill-box">
-        <h3>💻 Languages</h3>
-        <p>Python • HTML • CSS</p>
-    </div>
+        <!-- ─── SKILLS ────────────────────────────────────── -->
+        <section class="section skills" id="skills">
+            <div class="section__inner">
+                <h2 class="section__title">What I Play With</h2>
+                <div class="skills__grid">
+                    <div class="skill-card">
+                        <div class="skill-card__icon">💻</div>
+                        <h3>Languages</h3>
+                        <p>Python · HTML · CSS</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">🛠</div>
+                        <h3>Tools</h3>
+                        <p>Jupyter Notebook · GitHub · VS Code</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">📊</div>
+                        <h3>Data & ML</h3>
+                        <p>Pandas · NumPy · Scikit-learn · EDA · Feature Engineering</p>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-card__icon">📈</div>
+                        <h3>Visualization</h3>
+                        <p>Power BI · Matplotlib · Seaborn · Interactive Dashboards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="skill-box">
-        <h3>🛠 Tools</h3>
-        <p>Jupyter Notebook • GitHub • VS Code</p>
-    </div>
+        <!-- ─── PROJECTS ──────────────────────────────────── -->
+        <section class="section projects" id="projects">
+            <div class="section__inner">
+                <h2 class="section__title">Projects</h2>
+                <div class="projects__grid">
 
-    <div class="skill-box">
-        <h3>📊 Data & ML</h3>
-        <p>Pandas • NumPy • Scikit-learn • EDA • Data Cleaning • Feature Engineering</p>
-    </div>
+                    <article class="project-card">
+                        <div class="project-card__badge">Power BI</div>
+                        <h3>🏥 Hospital ER Dashboard</h3>
+                        <p>Interactive Power BI dashboard analyzing emergency room performance, patient flow, waiting times, admissions, and department workload.</p>
+                        <a href="https://github.com/Angelinamoses/Hospital-ER-Dashboard" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub →</a>
+                    </article>
 
-    <div class="skill-box">
-        <h3>📈 Visualization</h3>
-        <p>Power BI • Matplotlib • Seaborn • Dashboards • Interactive Visualizations</p>
-    </div>
-</section>
-            </section>
-            <h2>Projects</h2>
-            <section class="projects">
+                    <article class="project-card">
+                        <div class="project-card__badge">ML · Classification</div>
+                        <h3>🎗 Breast Cancer Risk Prediction</h3>
+                        <p>Logistic regression model predicting breast cancer risk through healthcare data analysis and classification techniques.</p>
+                        <a href="https://github.com/Angelinamoses/breast-cancer-risk-prediction-logistic-regression" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub →</a>
+                    </article>
 
-    <div class="project-card">
-    <h3>🏥 Hospital ER Dashboard</h3>
-    <p>
-        Interactive Power BI dashboard analyzing emergency room performance,
-        patient flow, waiting times, admissions, and department workload.
-    </p>
-    <a href="https://github.com/Angelinamoses/Hospital-ER-Dashboard" target="_blank">
-        View Project →
-    </a>
-</div>
+                    <article class="project-card">
+                        <div class="project-card__badge">EDA · 25K+ Records</div>
+                        <h3>🏥 Hospital Readmission Analysis</h3>
+                        <p>Exploratory data analysis of 25,000+ patient records identifying factors influencing hospital readmissions and patient outcomes.</p>
+                        <a href="https://github.com/Angelinamoses/hospital-readmissions-eda" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub →</a>
+                    </article>
 
-<div class="project-card">
-    <h3>🎗 Breast Cancer Risk Prediction</h3>
-    <p>
-        Machine learning model using logistic regression to predict breast
-        cancer risk through healthcare data analysis and classification techniques.
-    </p>
-    <a href="https://github.com/Angelinamoses/breast-cancer-risk-prediction-logistic-regression" target="_blank">
-        View Project →
-    </a>
-</div>
+                    <article class="project-card">
+                        <div class="project-card__badge">ML · Predictive</div>
+                        <h3>🩺 Diabetes Risk Prediction</h3>
+                        <p>Predictive analytics model identifying diabetes risk using patient health indicators and machine learning techniques.</p>
+                        <a href="https://github.com/Angelinamoses/diabetes_linear_reg" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub →</a>
+                    </article>
 
-<div class="project-card">
-    <h3>🏥 Hospital Readmission Analysis</h3>
-    <p>
-        Exploratory data analysis of 25,000+ patient records to identify
-        factors influencing hospital readmissions and patient outcomes.
-    </p>
-    <a href="https://github.com/Angelinamoses/hospital-readmissions-eda" target="_blank">
-        View Project →
-    </a>
-</div>
+                    <article class="project-card">
+                        <div class="project-card__badge">NLP</div>
+                        <h3>📋 Clinical Notes NLP</h3>
+                        <p>Natural Language Processing project analyzing clinical notes to extract meaningful healthcare insights from unstructured medical text.</p>
+                        <a href="https://github.com/Angelinamoses/clinical-notes-nlp" target="_blank" rel="noopener" class="btn btn--outline">View on GitHub →</a>
+                    </article>
 
-<div class="project-card">
-    <h3>🩺 Diabetes Risk Prediction</h3>
-    <p>
-        Predictive analytics model identifying diabetes risk using patient
-        health indicators and machine learning techniques.
-    </p>
-    <a href="https://github.com/Angelinamoses/diabetes_linear_reg" target="_blank">
-        View Project →
-    </a>
-</div>
+                    <article class="project-card project-card--featured">
+                        <div class="project-card__badge">FastAPI · Live</div>
+                        <h3>❤️ Heart Disease Prediction API</h3>
+                        <p>FastAPI-powered machine learning application predicting heart disease risk through healthcare indicators and model inference.</p>
+                        <a href="https://angelinamoses.github.io/heart-disease-fastapi/" target="_blank" rel="noopener" class="btn btn--primary">Live Demo →</a>
+                    </article>
 
-<div class="project-card">
-    <h3>📋 Clinical Notes NLP</h3>
-    <p>
-        Natural Language Processing project analyzing clinical notes to
-        extract meaningful healthcare insights from unstructured medical text.
-    </p>
-    <a href="https://github.com/Angelinamoses/clinical-notes-nlp" target="_blank">
-        View Project →
-    </a>
-</div>
+                </div>
+            </div>
+        </section>
 
-<div class="project-card">
-    <h3>❤️ Heart Disease Prediction API</h3>
-    <p>
-        FastAPI-powered machine learning application for predicting heart
-        disease risk through healthcare indicators and model inference.
-    </p>
-    <a href="https://angelinamoses.github.io/heart-disease-fastapi/" target="_blank">
-        Live Demo →
-    </a>
-</div>
-</section>
-        </section>    
-    </section>
-        <script src="script.js"></script>
+        <!-- ─── CONTACT ───────────────────────────────────── -->
+        <section class="section contact" id="contact">
+            <div class="section__inner">
+                <h2 class="section__title">Connect With Me</h2>
+                <p class="contact__sub">Always open to collaborations, opportunities, and conversations about healthcare tech.</p>
+                <div class="contact__links">
+                    <a href="https://github.com/Angelinamoses" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link__icon">🐙</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/angel-darla-28511723b/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link__icon">💼</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/angeleenadarla/" target="_blank" rel="noopener" class="contact-link">
+                        <span class="contact-link__icon">📷</span>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-<section id="socials">
-    <h2>Connect With Me</h2>
+    </main>
 
-    <div class="social-links">
+    <!-- ─── FOOTER ────────────────────────────────────────── -->
+    <footer class="footer">
+        <p>404: Social life not found</p>
+        <p>Made with ❤️ by Angelina</p>
+    </footer>
 
-        <a href="https://github.com/Angelinamoses" target="_blank">
-            🐙 GitHub
-        </a>
-
-        <a href="https://www.linkedin.com/in/angel-darla-28511723b/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BTuwDHPNwT92ViaE9l7hZeg%3D%3D" target="_blank">
-            💼 LinkedIn
-        </a>
-
-        <a href="https://www.instagram.com/angeleenadarla/" target="_blank">
-            📷 Instagram
-        </a>
-
-    </div>
-</section>
-<footer>
-    <p>404: Social life not found</p>
-    <p>Made with ❤️ by Angelina</p>
-</footer>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>
