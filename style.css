@@ -468,7 +468,9 @@ strong { color: var(--text); }
     background: radial-gradient(circle at 80% 20%, rgba(0,247,255,0.05), transparent 60%);
     opacity: 0;
     transition: opacity var(--transition);
+    pointer-events: none;
 }
+
 
 .project-card:hover {
     border-color: rgba(0,247,255,0.25);
