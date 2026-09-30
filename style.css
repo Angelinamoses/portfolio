@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════
-   ANGELINA PORTFOLIO  |  style.css
+   ANGEL DARLA PORTFOLIO  |  style.css
    ════════════════════════════════════════════ */
 
 /* ── TOKENS ─────────────────────────────────── */
@@ -43,9 +43,10 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-img { display: block; }
+img { display: block; max-width: 100%; }
 p { color: var(--text-muted); }
 strong { color: var(--text); }
+button { font-family: inherit; }
 
 /* ── SCROLLBAR ───────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
@@ -64,6 +65,7 @@ strong { color: var(--text); }
     cursor: pointer;
     transition: var(--transition);
     white-space: nowrap;
+    border: none;
 }
 
 .btn--primary {
@@ -89,13 +91,14 @@ strong { color: var(--text); }
 
 /* ── NAVIGATION ──────────────────────────────── */
 .nav {
-    position: absolute;
+    position: fixed; /* was absolute — keeps nav visible while scrolling */
     top: 0; left: 0; right: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px 60px;
-    z-index: 10;
+    padding: 22px 60px;
+    z-index: 100;
+    transition: background var(--transition), border-color var(--transition);
 }
 
 .nav__logo {
@@ -109,6 +112,7 @@ strong { color: var(--text); }
 .nav__links {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 36px;
 }
 
@@ -121,6 +125,17 @@ strong { color: var(--text); }
     transition: color var(--transition);
 }
 .nav__links a:hover { color: var(--cyan); }
+
+/* Highlights whichever section is currently in view (toggled by script.js) */
+.nav__links a.active { color: var(--cyan); }
+
+/* Makes the Resume link stand out slightly from the rest of the nav */
+.nav__resume {
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+}
+.nav__resume:hover { border-color: var(--cyan); }
 
 /* ── HERO ────────────────────────────────────── */
 .hero {
@@ -219,7 +234,15 @@ strong { color: var(--text); }
 .hero__sub {
     font-size: 15px;
     color: var(--text-muted);
-    max-width: 360px;
+    max-width: 420px;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
 }
 
 /* ── TERMINAL ────────────────────────────────── */
@@ -307,7 +330,7 @@ strong { color: var(--text); }
 }
 
 .section__inner {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -383,9 +406,11 @@ strong { color: var(--text); }
     background: var(--bg-2);
 }
 
+/* auto-fit lets this comfortably hold 8 cards without a hardcoded
+   column count that would need editing every time a skill is added */
 .skills__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 20px;
 }
 
@@ -436,6 +461,36 @@ strong { color: var(--text); }
     color: var(--text-muted);
 }
 
+/* ── PROJECT FILTERS ─────────────────────────── */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: -20px 0 36px; /* pulls up under the section title */
+}
+
+.filter-btn {
+    padding: 9px 18px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1.5px solid var(--border-2);
+    color: var(--text-muted);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.filter-btn:hover {
+    border-color: var(--border);
+    color: var(--text);
+}
+.filter-btn.is-active {
+    background: var(--cyan);
+    border-color: var(--cyan);
+    color: #000;
+}
+
 /* ── PROJECTS ────────────────────────────────── */
 .projects {
     background: var(--bg);
@@ -454,8 +509,9 @@ strong { color: var(--text); }
     padding: 28px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 14px;
-    transition: var(--transition);
+    transition: var(--transition), opacity 0.25s ease, transform 0.25s ease;
     position: relative;
     overflow: hidden;
 }
@@ -471,13 +527,17 @@ strong { color: var(--text); }
     pointer-events: none;
 }
 
-
 .project-card:hover {
     border-color: rgba(0,247,255,0.25);
     transform: translateY(-6px);
     box-shadow: var(--shadow-cyan);
 }
 .project-card:hover::after { opacity: 1; }
+
+/* Cards hidden by the project filter (see script.js) */
+.project-card.is-hidden {
+    display: none;
+}
 
 .project-card--featured {
     border-color: rgba(0,247,255,0.25);
@@ -516,6 +576,17 @@ strong { color: var(--text); }
     flex: 1;
 }
 
+/* When a card has two link buttons (e.g. Live Demo + GitHub) */
+.project-card .btn + .btn {
+    margin-top: -4px;
+}
+
+.projects__empty {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
 /* ── CONTACT ─────────────────────────────────── */
 .contact {
     background: var(--bg-2);
@@ -547,6 +618,7 @@ strong { color: var(--text); }
     font-weight: 700;
     color: var(--text);
     transition: var(--transition);
+    cursor: pointer;
 }
 .contact-link:hover {
     border-color: var(--cyan);
@@ -571,17 +643,75 @@ strong { color: var(--text); }
     font-size: 13px;
     color: var(--text-muted);
 }
+.footer__muted {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* ── TOAST (email-copied confirmation) ───────── */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translate(-50%, 20px);
+    background: var(--bg-3);
+    border: 1px solid var(--cyan);
+    color: var(--text);
+    padding: 12px 22px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: var(--shadow-cyan);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 200;
+}
+.toast.is-visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* ── BACK TO TOP ─────────────────────────────── */
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--cyan);
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    z-index: 100;
+}
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background: var(--cyan-dim);
+    border-color: var(--cyan);
+    box-shadow: var(--shadow-cyan);
+}
 
 /* ── RESPONSIVE ──────────────────────────────── */
 @media (max-width: 900px) {
-    .skills__grid { grid-template-columns: repeat(2, 1fr); }
     .projects__grid { grid-template-columns: repeat(2, 1fr); }
     .about__grid { grid-template-columns: 1fr; gap: 36px; }
 }
 
 @media (max-width: 768px) {
-    .nav { padding: 24px 24px; }
-    .nav__links { display: none; }
+    .nav { padding: 20px 24px; }
+    .nav__links { gap: 18px; }
+    .nav__links li:not(:last-child) { display: none; } /* keep Resume visible on mobile */
 
     .hero { padding: 100px 20px 50px; }
     .hero__img-wrap { width: 150px; height: 150px; }
@@ -599,4 +729,5 @@ strong { color: var(--text); }
     .skills__grid { grid-template-columns: 1fr; }
     .contact__links { flex-direction: column; }
     .contact-link { width: 100%; }
+    .back-to-top { right: 16px; bottom: 16px; }
 }
